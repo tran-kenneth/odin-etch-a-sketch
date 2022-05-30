@@ -1,0 +1,6 @@
+.grid-pixel {
+  width: 10px;
+  height: 10px;
+  background-color: lightgray;
+  margin: 1px;
+}
