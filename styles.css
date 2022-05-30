@@ -1,6 +1,10 @@
+body {
+  background-color: rgb(50, 50, 50);
+}
+
 .grid-pixel {
   width: 10px;
   height: 10px;
-  background-color: lightgray;
+  background-color: lightskyblue;
   margin: 1px;
 }
