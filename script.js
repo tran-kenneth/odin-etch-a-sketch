@@ -11,6 +11,9 @@ function createGrid(length = 16) {
 function addMouseEventToGrid() {
   const gridPixels = document.querySelectorAll(".grid-pixel");
   console.log(gridPixels);
+  gridPixels.forEach((gridPixel) => {
+    gridPixel.addEventListener("mouseenter", console.log);
+  });
 }
 
 createGrid();
