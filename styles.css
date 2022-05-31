@@ -14,3 +14,7 @@ body {
   background-color: lightskyblue;
   margin: 1px;
 }
+
+.dark-pixel {
+  background-color: darkcyan;
+}
