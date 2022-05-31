@@ -8,11 +8,15 @@ function createGrid(length = 16) {
   }
 }
 
+function mouseOnPixelEffect(e) {
+  console.log(this.classList.add("dark-pixel"));
+}
+
 function addMouseEventToGrid() {
   const gridPixels = document.querySelectorAll(".grid-pixel");
-  console.log(gridPixels);
+
   gridPixels.forEach((gridPixel) => {
-    gridPixel.addEventListener("mouseenter", console.log);
+    gridPixel.addEventListener("mouseenter", mouseOnPixelEffect);
   });
 }
 
