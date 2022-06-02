@@ -9,7 +9,7 @@ function createGrid(length = 16) {
 }
 
 function mouseOnPixelEffect(e) {
-  console.log(this.classList.add("dark-pixel"));
+  this.classList.add("dark-pixel");
 }
 
 function addMouseEventToGrid() {
