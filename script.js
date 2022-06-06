@@ -21,7 +21,6 @@ function addMouseEventToGrid() {
 }
 
 function resetGrid() {
-  console.log("in reset");
   const gridPixels = document.querySelectorAll(".grid-pixel");
 
   gridPixels.forEach((gridPixel) => {
