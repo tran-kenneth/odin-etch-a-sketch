@@ -35,6 +35,13 @@ function addResetButtonListener() {
   resetButton.addEventListener("click", resetGrid);
 }
 
+function addChangeGridButtonListener() {
+  const changeGridButton = document.querySelector(".btn-change-grid");
+
+  changeGridButton.addEventListener("click", console.log);
+}
+
 createGrid();
 addMouseEventToGrid();
 addResetButtonListener();
+addChangeGridButtonListener();
