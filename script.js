@@ -20,5 +20,21 @@ function addMouseEventToGrid() {
   });
 }
 
+function resetGrid() {
+  console.log("in reset");
+  const gridPixels = document.querySelectorAll(".grid-pixel");
+
+  gridPixels.forEach((gridPixel) => {
+    gridPixel.classList.remove("dark-pixel");
+  });
+}
+
+function addResetButtonListener() {
+  const resetButton = document.querySelector(".btn-reset");
+
+  resetButton.addEventListener("click", resetGrid);
+}
+
 createGrid();
 addMouseEventToGrid();
+addResetButtonListener();
