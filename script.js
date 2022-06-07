@@ -1,7 +1,7 @@
 function createGrid(length = 16) {
   const grid = document.querySelector(".grid-container");
 
-  for (let i = 0; i < 256; i++) {
+  for (let i = 0; i < length ** 2; i++) {
     let gridPixel = document.createElement("div");
     gridPixel.classList.add("grid-pixel");
     grid.appendChild(gridPixel);
@@ -46,6 +46,16 @@ function promptChangeGrid() {
   while (!validGridLength(userEntry)) {
     userEntry = Number(prompt("Enter a number"));
   }
+
+  return userEntry;
+}
+
+function changeGrid() {
+  let newLength = promptChangeGrid();
+
+  deleteGrid();
+  createGrid(newLength);
+  addMouseEventToGrid();
 }
 
 function addResetButtonListener() {
@@ -57,10 +67,10 @@ function addResetButtonListener() {
 function addChangeGridButtonListener() {
   const changeGridButton = document.querySelector(".btn-change-grid");
 
-  changeGridButton.addEventListener("click", promptChangeGrid);
+  changeGridButton.addEventListener("click", changeGrid);
 }
 
-createGrid();
-addMouseEventToGrid();
 addResetButtonListener();
 addChangeGridButtonListener();
+createGrid();
+addMouseEventToGrid();
