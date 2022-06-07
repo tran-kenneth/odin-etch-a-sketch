@@ -28,6 +28,10 @@ function resetGrid() {
   });
 }
 
+function promptChangeGrid() {
+  console.log("change");
+}
+
 function addResetButtonListener() {
   const resetButton = document.querySelector(".btn-reset");
 
