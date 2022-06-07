@@ -36,8 +36,16 @@ function resetGrid() {
   });
 }
 
+function validGridLength(length) {
+  return length >= 16 && length <= 100;
+}
+
 function promptChangeGrid() {
-  console.log("change");
+  let userEntry;
+
+  while (!validGridLength(userEntry)) {
+    userEntry = Number(prompt("Enter a number"));
+  }
 }
 
 function addResetButtonListener() {
@@ -49,7 +57,7 @@ function addResetButtonListener() {
 function addChangeGridButtonListener() {
   const changeGridButton = document.querySelector(".btn-change-grid");
 
-  changeGridButton.addEventListener("click", deleteGrid);
+  changeGridButton.addEventListener("click", promptChangeGrid);
 }
 
 createGrid();
