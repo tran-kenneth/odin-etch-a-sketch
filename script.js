@@ -8,6 +8,14 @@ function createGrid(length = 16) {
   }
 }
 
+function deleteGrid() {
+  const grid = document.querySelector(".grid-container");
+
+  while (grid.hasChildNodes()) {
+    grid.removeChild(grid.firstChild);
+  }
+}
+
 function mouseOnPixelEffect(e) {
   this.classList.add("dark-pixel");
 }
@@ -41,7 +49,7 @@ function addResetButtonListener() {
 function addChangeGridButtonListener() {
   const changeGridButton = document.querySelector(".btn-change-grid");
 
-  changeGridButton.addEventListener("click", console.log);
+  changeGridButton.addEventListener("click", deleteGrid);
 }
 
 createGrid();
