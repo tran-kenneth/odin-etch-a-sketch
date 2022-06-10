@@ -74,3 +74,17 @@ addResetButtonListener();
 addChangeGridButtonListener();
 createGrid();
 addMouseEventToGrid();
+
+let styleRules = document.styleSheets[0].cssRules;
+console.log(styleRules);
+
+function getCSSRules(unique_title) {
+  for (const cssRules of document.styleSheets[0].cssRules) {
+    console.log(cssRules.selectorText);
+    if (cssRules.selectorText === unique_title) {
+      return cssRules;
+    }
+  }
+}
+
+console.log(getCSSRules(".grid-pixel"));
