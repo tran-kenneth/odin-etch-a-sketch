@@ -85,5 +85,10 @@ function getCSSRules(unique_title) {
   }
 }
 
+function changeGridPixelDimensions(gridPixelClass, width, height){
+  gridPixelClass.style.width = width;
+  gridPixelClass.style.height = height; 
+}
+
 const gridPixelClass = getCSSRules(".grid-pixel");
 // Can change width with gridPixelClass.style.width = "20px";
