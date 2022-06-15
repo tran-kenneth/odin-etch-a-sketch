@@ -90,5 +90,10 @@ function changeGridPixelDimensions(gridPixelClass, width, height){
   gridPixelClass.style.height = height; 
 }
 
+function calculateNewGridPixelDimensions(containerLength = 500, pixelLength){
+  //const gridContainerClass = getCSSRules(".grid-container");
+  return Math.floor(containerLength / pixelLength);
+}
+
 const gridPixelClass = getCSSRules(".grid-pixel");
 // Can change width with gridPixelClass.style.width = "20px";
