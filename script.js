@@ -6,6 +6,9 @@ function createGrid(length = 16) {
     gridPixel.classList.add("grid-pixel");
     grid.appendChild(gridPixel);
   }
+
+  const gridPixelDimensions = calculateNewGridPixelDimensions(500, length);
+  changeGridPixelDimensions(gridPixelClass, gridPixelDimensions, gridPixelDimensions)
 }
 
 function deleteGrid() {
@@ -70,10 +73,7 @@ function addChangeGridButtonListener() {
   changeGridButton.addEventListener("click", changeGrid);
 }
 
-addResetButtonListener();
-addChangeGridButtonListener();
-createGrid();
-addMouseEventToGrid();
+
 
 let styleRules = document.styleSheets[0].cssRules;
 
@@ -86,14 +86,19 @@ function getCSSRules(unique_title) {
 }
 
 function changeGridPixelDimensions(gridPixelClass, width, height){
-  gridPixelClass.style.width = width;
-  gridPixelClass.style.height = height; 
+  gridPixelClass.style.width = `${width}px`;
+  gridPixelClass.style.height = `${height}px`; 
 }
 
-function calculateNewGridPixelDimensions(containerLength = 500, pixelLength){
+function calculateNewGridPixelDimensions(containerLength = 500, numPixelLength){
   //const gridContainerClass = getCSSRules(".grid-container");
-  return Math.floor(containerLength / pixelLength);
+  return containerLength / numPixelLength;
 }
 
 const gridPixelClass = getCSSRules(".grid-pixel");
 // Can change width with gridPixelClass.style.width = "20px";
+
+addResetButtonListener();
+addChangeGridButtonListener();
+createGrid();
+addMouseEventToGrid();
