@@ -47,7 +47,7 @@ function promptChangeGrid() {
   let userEntry;
 
   while (!validGridLength(userEntry)) {
-    userEntry = Number(prompt("Enter a number"));
+    userEntry = Number(prompt("Enter a valid number (16-100):"));
   }
 
   return userEntry;
